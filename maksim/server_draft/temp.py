@@ -17,7 +17,7 @@ result.pop('1')
 app = Flask(__name__)
 
 @app.route('/result')
-def index_page():
+def result_page():
     return render_template('template.html', name = name,
                            inn = inn, result = result)
 
