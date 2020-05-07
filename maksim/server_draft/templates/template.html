@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>Информация о компании</title>
+        <link rel="stylesheet" type="text/css" href="/global/main.css" />
+        <link rel="stylesheet" type="text/css" href="/global/main-handheld.css" media="handheld" />
+        <link rel="stylesheet" type="text/css" href="/global/main-print.css" media="print" />
+    </head>
+    <body id="home_page">
+        <table width="100%" id="layout" class="layout">
+            <tr valign="top" id="header" class="layout">
+                <td colspan="2" class="layout">
+                    <b id="logo">
+                        <img src="logo.jpg" width="116" height="89" alt="Компания" />
+                    </b>
+                </td>
+            </tr>
+            <tr valign="top" class="layout">
+                <td width="15%" id="navigation" class="navigation layout">
+                    <ul>
+                        <li><a href="./">На главную</a></li>
+                    </ul>
+                </td>
+                <td width="100%" id="content" class="layout">
+                    <h1>Данные о компании</h1>
+                    <table border="1" class="data">
+						<tr valign="top">
+							<td>
+								Название компании
+							</td>
+							<td>
+								{{name}}
+							</td>
+						</tr>
+						<tr valign="top">
+							<td>
+								ИНН
+							</td>
+							<td>
+								{{inn}}
+							</td>
+						{% for prop in result %}
+						<tr valign="top">
+							<td>
+								{{prop}}
+							</td>
+							<td>
+								{{result[prop]}}
+							</td>
+						</tr>
+						{% endfor %}
+						</tr>
+					</table>
+                </td>
+            </tr>
+            <tr valign="top" id="footer" class="layout">
+                <td colspan="2" class="layout">
+                    <p id="copyright">&copy;&nbsp;PwC</p>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
