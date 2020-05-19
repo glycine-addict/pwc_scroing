@@ -7,7 +7,7 @@
             <tr valign="top" id="header" class="layout">
                 <td colspan="2" class="layout">
                     <b id="logo">
-                        <img src="logo.jpg" width="116" height="89" alt="Компания" />
+						<img src="{{ url_for('static', filename='logo.jpg') }}" />
                     </b>
                 </td>
             </tr>
@@ -35,13 +35,41 @@
 							<td>
 								{{inn}}
 							</td>
+						<tr valign="top">
+							<td>
+								ОКПО
+							</td>
+							<td>
+								{{okpo}}
+							</td>
+						<tr valign="top">
+							<td>
+								ОКОПФ
+							</td>
+							<td>
+								{{okopf}}
+							</td>
+						<tr valign="top">
+							<td>
+								ОКФС
+							</td>
+							<td>
+								{{okfs}}
+							</td>
+						<tr valign="top">
+							<td>
+								ОКВЭД
+							</td>
+							<td>
+								{{okved}}
+							</td>
 						{% for prop in result %}
 						<tr valign="top">
 							<td>
-								{{prop}}
+								{{prop[0]}}
 							</td>
 							<td>
-								{{result[prop]}}
+								{{prop[1]}}
 							</td>
 						</tr>
 						{% endfor %}
